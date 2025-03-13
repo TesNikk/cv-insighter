@@ -7,7 +7,7 @@ const Header = () => {
       <div className="container mx-auto flex justify-between items-center px-4">
         {/* Logo or Brand Name */}
         <Link href="/" >
-          <h1 className="text-2xl font-bold cursor-pointer transition hover: underline hover:text-gray-300">CV-Insighter</h1>
+          <h1 className="text-2xl font-bold cursor-pointer transition hover:underline hover:text-gray-300">CV-Insighter</h1>
         </Link>
 
         {/* Navigation Links */}
