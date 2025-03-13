@@ -5,6 +5,7 @@ const CVForm = () => {
     name: "",
     email: "",
     phone: "",
+    education:"",
     experience: "",
     skills: "",
     profileSummary: "",
@@ -19,13 +20,14 @@ const CVForm = () => {
     e.preventDefault();
     console.log("Submitted Data:", formData);
     // Call API to submit form data
+
   };
 
   return (
-    <div className="max-w-2xl mx-auto bg-gray-200 p-6 rounded-lg shadow-lg">
+    <div className="max-w-2xl mx-auto bg-gray-200 p-6 rounded-lg shadow-lg m-4">
       <h2 className="text-2xl font-bold mb-4 text-center">Create Your CV</h2>
       <form onSubmit={handleSubmit} className="space-y-4">
-        {/* Name Field */}
+        
         <div>
           <label className="block font-medium">Name</label>
           <input
@@ -38,7 +40,7 @@ const CVForm = () => {
           />
         </div>
 
-        {/* Email Field */}
+        
         <div>
           <label className="block font-medium">Email</label>
           <input
@@ -51,7 +53,7 @@ const CVForm = () => {
           />
         </div>
 
-        {/* Phone Field */}
+        
         <div>
           <label className="block font-medium">Phone</label>
           <input
@@ -63,8 +65,19 @@ const CVForm = () => {
             className="w-full p-2 border border-gray-600 rounded-md bg-gray-100 text-black"
           />
         </div>
+        <div>
+          <label className="block font-medium">Education</label>
+          <input 
+          type="text" 
+          name="education" 
+          value={formData.education} 
+          onChange={handleChange}
+          required 
+          className="w-full p-2 border border-gray-600 rounded-md bg-gray-100 text-black">
+          </input>
+        </div>
 
-        {/* Experience Field */}
+        
         <div>
           <label className="block font-medium">Experience</label>
           <textarea
@@ -76,7 +89,7 @@ const CVForm = () => {
           ></textarea>
         </div>
 
-        {/* Skills Field */}
+        
         <div>
           <label className="block font-medium">Skills</label>
           <textarea
@@ -88,7 +101,7 @@ const CVForm = () => {
           ></textarea>
         </div>
 
-        {/* Profile Summary Field */}
+       
         <div>
           <label className="block font-medium">Profile Summary</label>
           <textarea
@@ -100,7 +113,7 @@ const CVForm = () => {
           ></textarea>
         </div>
 
-        {/* Submit Button */}
+        
         <div className="text-center">
           <button
             type="submit"
