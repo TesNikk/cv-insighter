@@ -74,7 +74,7 @@ const CVForm = () => {
         skill: [],
         summary: "",
       });
-      router.push(`/report/${data.id}`);
+      router.push(`/review/${data.id}`);
     } catch (error) {
       console.error("Error submitting CV:", error);
     }
@@ -82,7 +82,7 @@ const CVForm = () => {
 
   return (
     <div className="max-w-2xl mx-auto bg-gray-200 p-6 rounded-lg shadow-lg my-4">
-      <h2 className="text-2xl font-bold mb-4 text-center">Create Your CV</h2>
+      <h2 className="text-2xl font-bold mb-4 text-center">Upload Your CV Information</h2>
       <form onSubmit={handleSubmit} className="space-y-4">
         {/* Name */}
         <div>

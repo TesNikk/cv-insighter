@@ -7,7 +7,7 @@ const Header = () => {
       <div className="container mx-auto flex justify-between items-center px-4">
         {/* Logo or Brand Name */}
         <Link href="/" >
-          <h1 className="text-2xl font-bold cursor-pointer transition hover:underline hover:text-gray-300">CV-Insighter</h1>
+          <h1 className="text-2xl font-bold cursor-pointer transition hover:underline hover:text-gray-300">CV Insighter</h1>
         </Link>
 
         {/* Navigation Links */}
@@ -15,12 +15,12 @@ const Header = () => {
           <ul className="flex space-x-6">
             <li>
               <Link href="/" className="hover:underline hover:text-gray-300">
-                CV Form
+                Upload CV
               </Link>
             </li>
             <li>
-              <Link href="/report" className="hover:underline hover:text-gray-300">
-                All Report
+              <Link href="/all-cv" className="hover:underline hover:text-gray-300">
+                All CV
               </Link>
             </li>
           </ul>
