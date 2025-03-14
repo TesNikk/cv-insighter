@@ -82,7 +82,7 @@ const Report = () => {
 
   return (
     <div className="flex justify-center items-center min-h-screen">
-      <div className="bg-grey-200 shadow-lg rounded-lg p-6 max-w-md w-full bg-gray-200">
+      <div className="shadow-lg rounded-lg p-6 max-w-md w-full bg-gray-200">
         <h2 className="text-2xl font-bold text-gray-800 mb-4 align-middle flex justify-center">Report Details</h2>
         <div className="space-y-2">
           {/* <p><b>ID:</b> {userInfo.id}</p> */}

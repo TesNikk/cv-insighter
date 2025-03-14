@@ -68,8 +68,13 @@ const AllCV = () => {
   };
 
   const handleCompareClick = () => {
+    const selectedCVsWithNames = cvData
+    .filter(cv => selectedIds.includes(cv.id))
+    .map(cv => ({ id: cv.id, name: cv.name }));
+  
+  localStorage.setItem("selectedCVsWithNames", JSON.stringify(selectedCVsWithNames));
     // Save selected IDs to local storage
-    localStorage.setItem("selectedCVIds", JSON.stringify(selectedIds));
+    //localStorage.setItem("selectedCVIds", JSON.stringify(selectedIds));
     // Navigate to the BestSuited page
     router.push("/bestSuited");
   };
@@ -93,7 +98,7 @@ const AllCV = () => {
   return (
     <div className="container mx-auto p-4">
       <div className="flex justify-between items-center mb-6">
-        <h1 className="text-2xl font-bold">All CV Profiles</h1>
+        <h1 className="text-2xl font-bold flex justify-center">All CV Profiles</h1>
         {selectedIds.length > 0 && (
           <div className="flex space-x-2">
             <span className="py-2 px-3 bg-gray-100 rounded">

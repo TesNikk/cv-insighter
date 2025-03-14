@@ -1,33 +1,50 @@
+// 
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import BestSuited from "@/app/components/BestSuited";
 import Layout from "@/app/components/Layout";
 
+interface SelectedCV {
+  id: number;
+  name: string;
+}
+
 const BestSuitedPage = () => {
   const router = useRouter();
   const [selectedIds, setSelectedIds] = useState<number[]>([]);
+  const [selectedCVs, setSelectedCVs] = useState<SelectedCV[]>([]);
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
     // Mark that we're on the client
     setIsClient(true);
     
-    // Retrieve selected IDs from localStorage (client-side only)
-    const storedIds = localStorage.getItem('selectedCVIds');
-    if (storedIds) {
-      setSelectedIds(JSON.parse(storedIds));
+    // Retrieve selected CVs with names from localStorage
+    const storedCVsWithNames = localStorage.getItem('selectedCVsWithNames');
+    if (storedCVsWithNames) {
+      const parsedCVs = JSON.parse(storedCVsWithNames) as SelectedCV[];
+      setSelectedCVs(parsedCVs);
+      // Also set the IDs for backward compatibility
+      setSelectedIds(parsedCVs.map(cv => cv.id));
     } else {
-      // For testing purposes, provide default IDs
-      setSelectedIds([34, 35]);
-      
-      // Uncomment this for production to redirect if no IDs found
-      // router.push('/');
+      // Fallback to original method
+      const storedIds = localStorage.getItem('selectedCVIds');
+      if (storedIds) {
+        setSelectedIds(JSON.parse(storedIds));
+      } else {
+        // For testing purposes, provide default IDs
+        setSelectedIds([34, 35]);
+        
+        // Uncomment this for production to redirect if no IDs found
+        // router.push('/');
+      }
     }
   }, []);
 
   const handleClose = () => {
     localStorage.removeItem('selectedCVIds');
-    router.push('/');
+    localStorage.removeItem('selectedCVsWithNames');
+    router.push('/all-cv');
   };
 
   // Initial SSR render - show a simple loading state
@@ -50,6 +67,7 @@ const BestSuitedPage = () => {
         {selectedIds.length > 0 ? (
           <BestSuited
             selectedIds={selectedIds}
+            selectedCVs={selectedCVs}
             onClose={handleClose}
           />
         ) : (
