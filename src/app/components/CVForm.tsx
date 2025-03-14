@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import { useRouter } from "next/router";
 const CVForm = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -11,6 +11,7 @@ const CVForm = () => {
     summary: "",
   });
 
+  const router = useRouter();
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
@@ -49,6 +50,7 @@ const CVForm = () => {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          //"ngrok-skip-browser-warning": "69420",
         },
         body: JSON.stringify(formData),
       });
@@ -72,6 +74,7 @@ const CVForm = () => {
         skill: [],
         summary: "",
       });
+      router.push(`/report/${data.id}`);
     } catch (error) {
       console.error("Error submitting CV:", error);
     }

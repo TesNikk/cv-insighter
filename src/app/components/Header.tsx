@@ -20,7 +20,7 @@ const Header = () => {
             </li>
             <li>
               <Link href="/report" className="hover:underline hover:text-gray-300">
-                Report
+                All Report
               </Link>
             </li>
           </ul>
