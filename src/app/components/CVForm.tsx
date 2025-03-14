@@ -74,7 +74,7 @@ const CVForm = () => {
         skill: [],
         summary: "",
       });
-      router.push(`/report/${data.id}`);
+      router.push(`/review/${data.id}`);
     } catch (error) {
       console.error("Error submitting CV:", error);
     }

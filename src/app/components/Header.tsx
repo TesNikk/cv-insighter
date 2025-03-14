@@ -15,12 +15,12 @@ const Header = () => {
           <ul className="flex space-x-6">
             <li>
               <Link href="/" className="hover:underline hover:text-gray-300">
-                CV Form
+                Upload CV
               </Link>
             </li>
             <li>
-              <Link href="/report" className="hover:underline hover:text-gray-300">
-                All Report
+              <Link href="/all-cv" className="hover:underline hover:text-gray-300">
+                All CV
               </Link>
             </li>
           </ul>

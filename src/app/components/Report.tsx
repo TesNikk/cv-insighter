@@ -18,7 +18,7 @@ const Report = () => {
   const { id } = router.query; // Get the dynamic ID from URL
   const [userInfo, setUserInfo] = useState<UserInfo | null>(null);
   const [cvReport, setCvReport] = useState<CVReport | null>(null);
-  const [error, setError] = useState<string | null>(null);
+  const [error, setError] = useState<string | null> (null);
 
   useEffect(() => {
     if (!id) return; // Ensure ID is available before fetching
