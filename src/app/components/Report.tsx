@@ -1,8 +1,9 @@
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+import Loading from "./Loading";
 
 interface UserInfo {
-  id: number;
+  //id: number;
   name: string;
   email: string;
 }
@@ -75,18 +76,16 @@ const Report = () => {
   if (error) return <p className="text-red-600">Error: {error}</p>;
   if (!userInfo || !cvReport) {
     return (
-      <div className="flex justify-center items-center min-h-screen bg-gray-100">
-        <div className="animate-spin rounded-full h-12 w-12 border-t-4 border-grey-600 border-solid"></div>
-      </div>
+      <Loading />
     );
   }
 
   return (
     <div className="flex justify-center items-center min-h-screen">
-      <div className="bg-grey-200 shadow-lg rounded-lg p-6 max-w-md w-full">
+      <div className="bg-grey-200 shadow-lg rounded-lg p-6 max-w-md w-full bg-gray-200">
         <h2 className="text-2xl font-bold text-gray-800 mb-4 align-middle">Report Details</h2>
         <div className="space-y-2">
-          <p><b>ID:</b> {userInfo.id}</p>
+          {/* <p><b>ID:</b> {userInfo.id}</p> */}
           <p><b>Name:</b> {userInfo.name}</p>
           <p><b>Email:</b> {userInfo.email}</p>
           <p><b>Rating:</b> {cvReport.rating} / 10</p>
