@@ -103,7 +103,7 @@ const BestSuited: React.FC<BestSuitedProps> = ({ selectedIds, selectedCVs, onClo
 
       <div className="mt-6 text-center">
         <button
-          className="px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors"
+          className="px-6 py-2 bg-black text-white rounded hover:bg-gray-400 hover:text-black transition-colors"
           onClick={onClose}
         >
           Close
