@@ -3,24 +3,24 @@ import Link from "next/link";
 
 const Header = () => {
   return (
-    <header className=" py-4 shadow-md">
+    <header className="bg-gray-800 py-4 shadow-md text-white">
       <div className="container mx-auto flex justify-between items-center px-4">
         {/* Logo or Brand Name */}
-        <Link href="/">
-          <h1 className="text-2xl font-bold cursor-pointer">CV-Insighter</h1>
+        <Link href="/" >
+          <h1 className="text-2xl font-bold cursor-pointer transition hover:underline hover:text-gray-300">CV-Insighter</h1>
         </Link>
 
         {/* Navigation Links */}
         <nav>
           <ul className="flex space-x-6">
             <li>
-              <Link href="/" className="hover:underline">
+              <Link href="/" className="hover:underline hover:text-gray-300">
                 CV Form
               </Link>
             </li>
             <li>
-              <Link href="/report" className="hover:underline">
-                Report
+              <Link href="/report" className="hover:underline hover:text-gray-300">
+                All Report
               </Link>
             </li>
           </ul>
